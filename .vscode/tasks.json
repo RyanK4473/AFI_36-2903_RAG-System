@@ -1,0 +1,25 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "RAG: Start chatbot",
+      "type": "process",
+      "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "args": [
+        "chatbot.py",
+        "--model",
+        "ministral-3-3b-instruct-2512"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}\\ministral-lmstudio-rag"
+      },
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "clear": true
+      },
+      "problemMatcher": []
+    }
+  ]
+}
