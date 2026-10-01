@@ -31,17 +31,17 @@ Two models have separate jobs:
 | Python embeddings | `sentence-transformers/all-MiniLM-L6-v2` | Converts document text and questions into search vectors on the CPU. |
 | LM Studio | `Ministral 3 3B Instruct 2512` | Selects relevant excerpts from the retrieved passages. |
 
-The Nomic embedding model sometimes listed by LM Studio is not used by the current scripts. The `openai` package connects to LM Studio's local API; no OpenAI account is required for the default setup.
+The `openai` package connects to LM Studio's local API; no OpenAI account is required for the default setup.
 
 ## Requirements
 
 - Windows and PowerShell for the commands below.
-- Python 3.14, as used by this project.
+- Python 3.14.
 - [LM Studio](https://lmstudio.ai/download) with Ministral downloaded and available to its API server.
 - VS Code if you want to use the included launch task.
 - Internet access for package installation and initial model downloads.
 
-LM Studio can use a supported GPU for inference. Python creates embeddings on the CPU, so a false result from `torch.cuda.is_available()` does not by itself prevent this setup from running.
+LM Studio can use a supported GPU for inference. Python creates embeddings on the CPU; CUDA-enabled PyTorch is not required by the embedding pipeline.
 
 ## Project structure
 
@@ -65,13 +65,13 @@ AFI_36-2903_RAG-System/
 
 ### 1. Prepare the Python environment
 
-Open PowerShell in the project root. For the existing installation:
+Open PowerShell in the directory containing the project folder, then navigate to the project root:
 
 ```powershell
-Set-Location 'C:\Users\RKo\Code Projects\AFI_36-2903_RAG-System'
+Set-Location '.\AFI_36-2903_RAG-System'
 ```
 
-If you store the project elsewhere, substitute your own path. If the root `.venv` folder does not exist, create it:
+If the terminal is already in the project root, skip the navigation command. If the root `.venv` folder does not exist, create it:
 
 ```powershell
 py -3.14 -m venv .venv
