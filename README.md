@@ -2,7 +2,7 @@
 
 An AFI 36-2903 chatbot that helps Airmen find relevant source passages about dress and personal appearance. Using retrieval-augmented generation (RAG), it searches the documents supplied by the user, selects passages related to the question, and displays the original text with file, PDF page, and paragraph references.
 
-**This project was created entirely with AI.** It is an educational project for learning how RAG systems work, including document ingestion, embeddings, retrieval, and language-model integration.
+**This project was created entirely with AI.** It is an educational project for learning how RAG systems work, including document ingestion, embeddings, retrieval, and language-model integration.(FYI: Yes, this README was also made with AI. I didn't know how to have a new user set it up so I asked AI to help. lol)
 
 The current version uses **evidence quote mode**: Ministral selects passage IDs, and Python displays the source text. Users should read the cited passages and confirm that they apply to their situation and publication edition.
 
